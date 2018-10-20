@@ -1,0 +1,15 @@
+{
+  "name": "bt-app",
+  "version": "1.0.0",
+  "description": "bluetooth listener for tangible media guestures",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "woody",
+  "license": "ISC",
+  "dependencies": {
+    "noble": "^1.9.1",
+    "phoenix-channels": "^1.0.0"
+  }
+}
