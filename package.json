@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "noble": "^1.9.1",
-    "phoenix-channels": "^1.0.0"
+    "phoenix-channels": "^1.0.0",
+    "play-sound": "^1.1.2"
   }
 }

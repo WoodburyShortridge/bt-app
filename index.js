@@ -1,14 +1,43 @@
 const { Socket } = require('phoenix-channels')
-
 const socket = new Socket("ws://dlevs.me:4000/socket")
+const player = require('play-sound')(opts = {})
+
+const themeSound = () => {
+  player.play('sound/q_theme.wav', err => {
+    if (err) throw err
+  })
+}
+
+const loopTheme = () => {
+  themeSound()
+  setTimeout(() => {
+    loopTheme()
+  }, 116000)
+}
+
+const jumpSound = () => {
+  player.play('sound/jump.wav', err => {
+    if (err) throw err
+  })
+}
+
+const moveSound = () => {
+  player.play('sound/crawl.wav', err => {
+    if (err) throw err
+  })
+}
 
 socket.connect()
-
 // Now that you are connected, you can join channels with a topic:
 const channel = socket.channel("room:lobby", {})
 channel.join()
-  .receive("ok", resp => { console.log("Joined successfully", resp) })
-  .receive("error", resp => { console.log("Unable to join", resp) })
+  .receive("ok", resp => {
+    loopTheme()
+    console.log("Joined successfully", resp)
+  })
+  .receive("error", resp => {
+    console.log("Unable to join", resp)
+  })
 
 channel.push("jump", {body: 'juuuuuump'})
 
@@ -39,7 +68,12 @@ noble.on('discover', peripheral => {
         dCharacteristic.on('data', (data, isNotification) => {
           console.log('d is now: ', `${data.readUInt16BE(0)}%`);
           let thisMove = data.readUInt16BE(0);
+          moveSound();
           channel.push("move", {body: 'moooove'})
+          setTimeout(() => {
+            moveSound();
+            channel.push("move", {body: 'moooove'})
+          }, 200);
           lastMove = thisMove
         });
         // to enable notify
@@ -53,6 +87,7 @@ noble.on('discover', peripheral => {
         wCharacteristic.on('data', (data, isNotification) => {
           console.log('w is now: ', `${data.readUInt16BE(0)}%`);
           let thisMove = data.readUInt16BE(0);
+          jumpSound();
           channel.push("jump", {body: 'juuuuuump'})
           lastMove = thisMove
         });
