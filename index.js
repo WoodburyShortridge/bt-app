@@ -28,7 +28,6 @@ const moveSound = () => {
 }
 
 socket.connect()
-// Now that you are connected, you can join channels with a topic:
 const channel = socket.channel("room:lobby", {})
 channel.join()
   .receive("ok", resp => {
@@ -44,7 +43,6 @@ channel.push("jump", {body: 'juuuuuump'})
 const noble = require('noble');
 const serviceUuids = ['FFFF'];
 const allowDuplicates = false;
-let lastMove = 0;
 
 noble.on('stateChange', state => {
   if (state === 'poweredOn') {
@@ -55,6 +53,14 @@ noble.on('stateChange', state => {
 });
 
 noble.on('discover', peripheral => {
+  connectAU(peripheral);
+  peripheral.on('disconnect', error => {
+    console.log('disconnect');
+    connectAU(peripheral);
+  });
+});
+
+const connectAU = ( peripheral => {
   peripheral.connect(error => {
     console.log(`connected to peripheral: ${peripheral.uuid}`);
     peripheral.discoverServices(['ffff'], (error, services) => {
@@ -67,14 +73,12 @@ noble.on('discover', peripheral => {
 
         dCharacteristic.on('data', (data, isNotification) => {
           console.log('d is now: ', `${data.readUInt16BE(0)}%`);
-          let thisMove = data.readUInt16BE(0);
           moveSound();
           channel.push("move", {body: 'moooove'})
           setTimeout(() => {
             moveSound();
             channel.push("move", {body: 'moooove'})
           }, 200);
-          lastMove = thisMove
         });
         // to enable notify
         dCharacteristic.subscribe(error => {
@@ -86,10 +90,8 @@ noble.on('discover', peripheral => {
 
         wCharacteristic.on('data', (data, isNotification) => {
           console.log('w is now: ', `${data.readUInt16BE(0)}%`);
-          let thisMove = data.readUInt16BE(0);
           jumpSound();
           channel.push("jump", {body: 'juuuuuump'})
-          lastMove = thisMove
         });
         // to enable notify
         wCharacteristic.subscribe(error => {
