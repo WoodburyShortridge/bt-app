@@ -92,6 +92,10 @@ const connectAU = ( peripheral => {
           console.log('w is now: ', `${data.readUInt16BE(0)}%`);
           jumpSound();
           channel.push("jump", {body: 'juuuuuump'})
+          setTimeout(() => {
+            moveSound();
+            channel.push("move", {body: 'moooove'})
+          }, 100);
         });
         // to enable notify
         wCharacteristic.subscribe(error => {
