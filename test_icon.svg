@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="191px" height="169px" viewBox="0 0 191 169" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>design_dark copy 2@2x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons" transform="translate(-2787.000000, -266.000000)">
+            <g id="bw" transform="translate(120.000000, 232.000000)">
+                <g id="design_dark-copy-2" transform="translate(2669.000000, 36.000000)">
+                    <path d="M47,152.6 C47,159.227417 41.627417,164.6 35,164.6 C28.372583,164.6 23,159.227417 23,152.6 L23,128.6 C23,121.972583 28.372583,116.6 35,116.6 C41.627417,116.6 47,121.972583 47,128.6 L47,152.6 Z" id="Path" stroke="#333333" stroke-width="4"></path>
+                    <path d="M164.797747,48 L153.202253,48 C153.070325,47.0325586 153,45.8990555 153,44.5714286 L153,8.37276786 C153,0.167394431 155.686292,0 159,0 C162.313708,0 165,0.167394431 165,8.37276786 L165,44.5714286 C165,45.8990555 164.929675,47.0325586 164.797747,48 Z" id="Path" stroke="#333333" stroke-width="4"></path>
+                    <polyline id="Line" stroke="#333333" stroke-width="4" stroke-linecap="round" points="164 9.5 160.203125 9.5 155 9.5"></polyline>
+                    <path d="M35,117.6 L35,130.6" id="Line" stroke="#333333" stroke-width="3" stroke-linecap="round"></path>
+                    <polygon id="Triangle" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(159.000000, 55.000000) scale(-1, 1) rotate(-180.000000) translate(-159.000000, -55.000000) " points="159 48 165 62 153 62"></polygon>
+                    <circle id="Oval" fill="#333333" cx="14.5" cy="29.5" r="3.5"></circle>
+                    <circle id="Oval" fill="#333333" cx="26.5" cy="29.5" r="3.5"></circle>
+                    <circle id="Oval" fill="#333333" cx="38.5" cy="29.5" r="3.5"></circle>
+                    <path d="M151.943359,18.2304688 L10.4492187,18.2304688 C4.92637125,18.2304688 0.44921875,22.7076213 0.44921875,28.2304688 L0.44921875,138.095703 C0.44921875,143.618551 4.92637125,148.095703 10.4492188,148.095703 L21.2792969,148.095703" id="Path-6" stroke="#333333" stroke-width="4"></path>
+                    <path d="M166.683594,17.4394531 L176.070312,17.4394531 C181.59316,17.4394531 186.070312,21.9166056 186.070312,27.4394531 L186.070312,138.257812 C186.070312,143.78066 181.59316,148.257812 176.070312,148.257812 L48.5957031,148.257812" id="Path-7" stroke="#333333" stroke-width="4"></path>
+                    <path d="M98.7910156,43.5 C89.326208,43.5 79.9609375,53 79.9609375,62 C79.9609375,71 89.9452764,81 98.8369141,81 C107.728552,81 116,73.6274414 116,62 C116,50.3725586 108.255823,43.5 98.7910156,43.5 Z" id="Path-4" stroke="#333333" stroke-width="3"></path>
+                    <polygon id="Path-8" stroke="#333333" stroke-width="3" points="126.001953 89.265625 106.017578 119.302734 145.634766 119.302734"></polygon>
+                    <polyline id="Path-5" stroke="#333333" stroke-width="4" stroke-linecap="round" points="23.9672852 86.8549805 54.137207 66.3901367 76.1103516 85.8105469 101.612793 65.5517578"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
